@@ -7,7 +7,7 @@ ext_special=u"det poss neg aux auxpass ps mark complm prt".split()
 
 CoNLLFormat=namedtuple("CoNLLFormat",["ID","FORM","LEMMA","POS","FEAT","HEAD","DEPREL"])
 #Column lists for the various formats
-formats={"conll09":CoNLLFormat(0,1,2,4,6,8,10)}
+formats={"conll09":CoNLLFormat(0,1,2,4,6,8,10),"conllX":CoNLLFormat(0,1,2,4,5,6,7)}
 
 class Dependency(object):
     """ Simple class to represent dependency. """
@@ -49,7 +49,7 @@ class Graph(object):
         return g
 
     @classmethod
-    def create(cls,sent,conll_format="conll09"): 
+    def create(cls,sent,conll_format="conllX"): 
         """ This is the way to create graphs! """
         g=cls()
         form=formats[conll_format] #named tuple with the column indices

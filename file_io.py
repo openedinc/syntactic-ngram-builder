@@ -198,8 +198,8 @@ class FileWriter(object):
         self.dataset=dataset
         self.queue=queue
         self.outdir=out_dir
-        self.file_out=codecs.getwriter("utf-8")(gzip.open(self.outdir+u"/"+dataset+u".txt.gz","w"))
-
+        # self.file_out=codecs.getwriter("utf-8")(gzip.open(self.outdir+u"/"+dataset+u".txt.gz","w"))
+        self.file_out=codecs.open(self.outdir+u"/"+dataset+u".txt","w",encoding="utf-8")
 
     def run(self):
         while True:

@@ -273,7 +273,7 @@ class ArgBuilder(object):
 
     def __init__(self,in_q,verb_q,noun_q,print_type):
         self.in_q=in_q
-        self.form=formats[u"conll09"] # TODO define this properly
+        self.form=formats[u"conllX"] # TODO define this properly
         self.verb_q=verb_q
         self.noun_q=noun_q
         self.print_type=print_type
